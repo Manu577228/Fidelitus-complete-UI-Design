@@ -3,6 +3,7 @@
     height:100%;
     display: flex;
     overflow: hidden;
+    
 }
 
 .login-left{
@@ -34,8 +35,9 @@
 }
 
 .loginbox-{
+  
     width:300px;
-    height:330px;
+    flex: 2;
     background: white;
     border-radius: 5px;
     box-shadow: 0px 12px 23px 0px grey;
@@ -49,6 +51,7 @@
     animation-fill-mode: forwards;
     transition:linear;
     transition-duration: 1s;
+    font-family: 'Roboto', sans-serif;
 }
 
 @keyframes myanimation {
@@ -81,7 +84,7 @@
 
 .loginbox1{
     width:300px;
-    height:330px;
+    height:300px;
     background: white;
     border-radius: 5px;
     box-shadow: 0px 12px 23px 0px grey;
@@ -146,11 +149,19 @@
 
 .happy {
     color: white;
-    font-size:25px;
+    font-size:20px;
     font-weight:300;
     line-height:1px;
     margin-left:20px;
     text-align:center;
+}
+
+.happy1 {
+    color: white;
+    font-size:20px;
+    font-weight:300;
+    line-height:1px;
+    margin-right:180px ;
 }
 
 .btn-1 {
@@ -162,6 +173,63 @@
     width: 200px;
     border-radius: 5px;
     padding: 25px, 50px;
-   
+}
+
+.title {
+    text-align: center;
+}
+
+.input {
+    height:30px;
+    width: 90%;
+    background-color:#E7FCFD;
+    border-color: hsl(183, 85%, 95%);
+}
+
+
+.label{
+    margin-top: 30px;
+    }
+    
+
+.fcpl {
+    color: #ABAAAA;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 5px;
     
 }
+
+.password {
+    color: #ABAAAA;
+    padding: 2px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.checkbox {
+    color: #ABAAAA;
+    padding: 2px; 
+    margin-left: 10px;
+}
+
+.submit {
+    height: 30px;
+    width: 150px;
+    float: right;
+    margin-bottom: 20px;
+    padding: 2px;
+    right:0;
+    border-radius: 5px; 
+    margin-right: 10px;
+    color: white;
+    background-color:#008BA8;
+}
+
+.email {
+    color: #ABAAAA;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 5px; 
+}
+
