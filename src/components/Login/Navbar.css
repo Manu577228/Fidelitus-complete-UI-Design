@@ -1,0 +1,70 @@
+.navbar{
+    background-color: #E7FCFF;
+    height: 60px; 
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position:sticky;
+    z-index: 20; 
+}
+
+.nav-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    max-width: 1500px;
+}
+
+.company-logo{
+    align-items: left;
+    margin-left: 20px;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    margin-right: 2rem;
+    align-content: center;
+    position: absolute;
+}
+
+.input-field{
+    height: 40px;
+    width: 600px;
+    border: none;
+    padding: 5px 5px;
+    text-align: center;
+ }
+
+ ::placeholder {
+    text-align: center;
+    color: lightgray;
+}
+
+.navitem2 {
+    display: flex;
+    list-style: none;
+    text-align: center;
+     margin-left: 1rem;
+     margin-top: 5px;
+    align-content: center;
+    position: absolute;
+    font-size: 30px;
+}
+
+.navitem3 {
+    display: flex;
+    list-style: none;
+    text-align: center;
+     margin-left: 50rem;
+     margin-top: 5px;
+    align-content: center;
+    position: absolute;
+    font-size: 30px;
+}
+

@@ -1,27 +1,67 @@
 import React, { useState } from 'react'
-import Validation from './Validation';
-import Login from '../components/Login/Login.css'
+import axios from 'axios'
 
 const FormRight = () => {
 
     const [values, setValues] = useState({
-        fcpl: "",
-        password: "",
+        fcpl: "123",
+        password: "213",
         checkbox: "",
+        fcpl_error: "",
+        password_error: ""
     });
+
+
+
 
     const [errors, setErrors] = useState({});
 
     const handleChange = (event) => {
-        setValues({
-            ...values,
-            [event.target.name]: event.target.value,
-        });
+        if (event.target.name == 'fcpl') {
+            console.log("ok")
+            if (event.target.name == '') {
+                setValues({ ...values, fcpl_error: 'Fcpl_id required' })
+            }
+        } else if (event.target.name == 'password') {
+            if (event.target.name == '') {
+                setValues({ ...values, password_error: 'Password required' })
+            }
+        } else {
+            setValues({
+                ...values,
+                [event.target.name]: event.target.value,
+            });
+        }
+
     };
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        setErrors(Validation(values));
+        console.log(values)
+        if (values.fcpl == '' || values.password == '') {
+            setValues({ ...values, fcpl_error: 'Fcpl_id required', password_error: 'Password required' })
+        }
+        else {
+            console.log("working")
+            const data = {
+                "employee_id": "fcpl_228",
+                "password": "bharadwajmanu1844"
+            }
+
+            const authheaders = {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                    "Access-Control-Allow-Origin": "*"
+                }
+            }
+            axios.post('https://fidelituscorpmanagebase.com/api/login', data, authheaders)
+                .then((res) => {
+                    console.log(res.data)
+                }).catch((err) => {
+                    console.log(err)
+                })
+        }
     }
 
     return (
@@ -32,19 +72,18 @@ const FormRight = () => {
                 </div>
                 <form className="form-wrapper">
                     <div className="fcpl">
-                        <label className="label">FCPL ID </label><br />
-                        <input className="input" type="text" name="fcpl" value={values.fcpl} onChange={handleChange} />
-                        {errors.fcpl && <p className="error">{errors.fcpl}</p>}
+                        <label >FCPL ID </label><br />
+                        <input className="input" type="text" name="fcpl" onChange={handleChange} />
+                        <p className="error">{values.fcpl_error}</p>
                     </div>
                     <div className="password">
-                        <label className="label">PASSWORD</label><br />
-                        <input className="input" type="password" name="password" value={values.password} pattern=".{6,}" title="expected six or more characters" value={values.password} onChange={handleChange} />
-                        {errors.password && <p className="error">{errors.password}</p>}
-
+                        <label >PASSWORD</label><br />
+                        <input className="input" type="password" name="password" pattern=".{6,}" onChange={handleChange} />
+                        <p className="error">{values.password_error}</p>
                     </div>
                     <div className="checkbox">
-                        <input className="checkbox" type="checkbox" name="checkbox" value={values.checkbox} />
-                        <label className="label">REMEMBER ME</label>
+                        <input className="checkbox" type="checkbox" name="checkbox" />
+                        <label >REMEMBER ME</label>
 
                     </div>
                     <div>

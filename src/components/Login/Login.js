@@ -26,12 +26,12 @@ return (
 </div>
 
  <div className={!styleme ? "login-right":"login-right1"}>
- {/* <FormLeft/> */}
+ 
        
        
 <div className={!styleme ? "loginbox-":"loginbox1"}>
 {!styleme ? <FormRight /> : <FormLeft />}
-{/* <FormRight/> */}
+
 
 
 

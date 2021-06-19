@@ -1,52 +1,56 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import ValidationOne from './ValidationOne';
 
 
 const FormLeft = () => {
 
     const [values, setValues] = useState({
-        email:"",  
-        checkbox:"",
-      });
+        email: "",
+        checkbox: "",
+        email_err: ""
+    });
 
     const [errors, setErrors] = useState({});
-    
+
     const handleChange = (event) => {
-         setValues({
-          ...values,
-            [event.target.name]: event.target.value,
-         });
-      };
-    
-     const handleFormSubmit = (event) => {
-         event.preventDefault();
-         setErrors(ValidationOne(values));
-     }
+        if (event.target.name === 'email') {
+            if (event.target.name === '') {
+                setValues({ ...values, email_err: 'ENTER A VALID EMAIL ADDRESS' })
+            }
+        } else {
+            setValues({
+                ...values,
+                [event.target.name]: event.target.value,
+            });
+
+        }
+    };
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        setErrors(ValidationOne(values));
+    }
 
 
 
     return (
-        <div className = "Container">
-            <div className = "app-wrapper">
-                <div>
-                    <h2 className = "title">FORGOT PASSWORD</h2>         
-                </div>
+        <div className="Container">
+            <div className="app-wrapper">
+                <h2 className="title">FORGOT PASSWORD</h2>
                 <form className="form-wrapper">
-                <div className="email">
-                <label className="label">Email</label><br />
-                <input className="input" type="text" name="email" value={values.email}  onChange={handleChange} />
-                    {errors.email && <p className="error">{errors.email}</p>}
-                </div>   
-                <div className="checkbox">
-                    <input className="checkbox" type="checkbox" name="checkbox" value={values.checkbox} />
+                    <div className="email">
+                        <label className="label">Email</label><br />
+                        <input className="input" type="text" name="email" onChange={handleChange} />
+                        <p className="error">{values.email_err}</p>
+                    </div>
+                    <div className="checkbox">
+                        <input className="checkbox" type="checkbox" name="checkbox" />
                         <label className="label">REMEMBER ME</label>
-                </div>
-                <div>
+                    </div>
                     <button className="submit" onClick={handleFormSubmit}>SEND EMAIL</button>
-                </div>
-                </form>  
-            </div>  
-</div>
+                </form>
+            </div>
+        </div>
     )
 }
 
