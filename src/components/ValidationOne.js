@@ -1,6 +1,3 @@
-
-
-
 const ValidationOne = (values) => {
     let errors={};
 
@@ -14,14 +11,3 @@ return errors;
 
 
 export default ValidationOne
-
-
-
-
-
-
-
-
-
-
-
