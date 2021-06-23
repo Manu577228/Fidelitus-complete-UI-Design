@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Calendar() {
+function Reports() {
     return (
         <div>
-         CALENDAR   
+         <h1> REPORTS </h1>   
         </div>
     )
 }
 
-export default Calendar
+export default Reports

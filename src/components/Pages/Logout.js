@@ -1,11 +1,11 @@
 import React from 'react'
 
-function HrForm() {
+function Logout() {
     return (
         <div>
-          HR FORM  
+           <h1> LOGOUT </h1> 
         </div>
     )
 }
 
-export default HrForm
+export default Logout

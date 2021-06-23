@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Report() {
+function Settings() {
     return (
         <div>
-        REPORT 
+         <h1> SETTINGS </h1>   
         </div>
     )
 }
 
-export default Report
+export default Settings

@@ -1,0 +1,96 @@
+
+.navbar {
+    background-color: #43e8e5;
+    height: 60px;
+    width: 100%;
+}
+
+.nav-horizontal {
+    display: grid;
+    grid-template-columns: 85% 10% ;
+    align-items: center;
+}
+
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+   
+}
+
+.topnav li:hover {
+   cursor: pointer;
+}
+
+.dashboard {
+    color: white;
+    margin-left: 30px;
+    
+}
+
+.badge {
+    color: white;
+}
+
+.avatar {
+    margin-top: -8px;
+    margin-left: 50px;
+}
+
+
+.to-do-list {
+  color:white;
+  padding-left: 10px;
+}
+
+.sidebar {
+    background-color:#43e8e5;
+    height: 100vh;
+    width: 20%;
+}
+
+.nav-menu {
+    list-style-type: none;
+    color: white;
+    line-height: 50px;
+    padding-left: 50px;
+    margin: 0;
+    display: inline-block;
+}
+
+.nav-menu li {
+    font-size: 15px;
+    width: 100%;
+}
+
+.nav-menu li > a {
+    display: block;
+}
+
+.nav-menu>li:hover {
+    background-color: lightseagreen;
+    display: block;
+    
+}
+
+
+.nav-menu :link {
+    text-decoration: none;   
+}
+
+.menu {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: -2rem;
+}
+
+.account {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: -2rem;
+}
+
+
+
+
+

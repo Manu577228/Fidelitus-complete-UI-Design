@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Request() {
+function Reminder() {
     return (
         <div>
-          REQUEST  
+          <h1> REMINDER </h1>  
         </div>
     )
 }
 
-export default Request
+export default Reminder
